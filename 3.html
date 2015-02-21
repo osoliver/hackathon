@@ -1,0 +1,22 @@
+<form id="form" action="">
+	<div class="excercise">
+		<span>https://graph.facebook.com/</span>
+		<input type="text" name="user-entry" class="user-entry" maxlength="15">
+		<span>/</span>
+		<input type="text" name="user-entry2" class="user-entry2" maxlength="15">
+		<span>?type=normal&access_token=</span>
+		<input type="text" name="user-entry3" class="user-entry3" maxlength="15">
+	</div>
+	<input type="submit">
+</form>
+<script type="text/javascript">
+		$("#form").submit(function(event){
+			event.preventDefault();
+			if ($(".user-entry").val() === "100009256022346" && $(".user-entry2").val() === "statuses" && $(".user-entry3").val() === "token") {
+				$(".json-callback").html("GOOD");
+				endGame();
+			} else {
+				$(".json-callback").html("Try again");
+			}
+		});
+</script>
