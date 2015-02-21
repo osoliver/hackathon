@@ -1,26 +1,22 @@
 <form id="form" action="">
-	<div class="excercise"><span>https://graph.facebook.com/</span><input type="text" name="user-entry" class="user-entry" maxlength="16"><span>/</span><input type="text" name="user-entry2" class="user-entry2" maxlength="15"></div><input type="submit" value="Submit">
+	<div class="excercise">
+		<span>https://graph.facebook.com/</span>
+		<input type="text" name="user-entry" class="user-entry" maxlength="15">
+		<span>/</span>
+		<input type="text" name="user-entry2" class="user-entry2" maxlength="15">
+		<span>?type=normal&access_token=</span>
+		<input type="text" name="user-entry3" class="user-entry3" maxlength="15">
+	</div>
+	<input type="submit">
 </form>
 <script type="text/javascript">
 		$("#form").submit(function(event){
 			event.preventDefault();
-			var answer = $(".user-entry").val();
-			var answer2 = $(".user-entry2").val();
-			if ($(".user-entry").val() === "1398028433841125" && $(".user-entry2").val() === "statuses") {
-				var request = $(".excercise").text() + answer + "/" + answer2 + "?access_token=CAACEdEose0cBAIhKZBAsKmk0FPHcpoyXQXo1GHXUKYJU6qXc1MH6aBeD9bKLLWiEIioKNZAIrZC6JXL3FEZBOBu7Hdqxem1vDc0P5u8llRztM89108rg1KBQjtyVqVdEvnr9pZA4Oq7EeRxyMGPe3EIfZAt0jGto97N3pUO8ZAK7Xr66O3WoROwoUEZBCgPZAzH4VOhoYYyuZBA30A7kIugvZBlx1pnt9uNoFcZD";
-				console.log(request);
-				$.ajax({
-				  url: request,
-				  success:function(data){
-				  	console.log(JSON.stringify(data, null, 4));
-				    $(".json-callback").html((JSON.stringify(data, null, 4)));
-				  },
-				  error:function(e){
-				  	$(".json-callback").html("Impossible to spy Russell, try again.");
-				  }
-				});
+			if ($(".user-entry").val() === "100009256022346" && $(".user-entry2").val() === "picture" && $(".user-entry3").val() === "token") {
+				$(".json-callback").html("GOOD");
+				stageCompleted();
 			} else {
-				$(".json-callback").html("You're spying the wrong guy !!!!");
+				$(".json-callback").html("Try again");
 			}
 		});
 </script>

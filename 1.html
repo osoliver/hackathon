@@ -1,21 +1,25 @@
 <form id="form" action="">
-	<div class="excercise"><span>https://graph.facebook.com/</span><input type="text" name="user-entry" class="user-entry" maxlength="15"></div>
+	<div class="excercise">
+		<span>https://graph.facebook.com/</span>
+		<input type="text" name="user-entry" class="user-entry" maxlength="15">
+		<input type="submit">
+	</div>
 </form>
 <script type="text/javascript">
 		$("#form").submit(function(event){
 			event.preventDefault();
 			var answer = $(".user-entry").val();
-			if ($(".user-entry").val() === "me") {
+			if ($(".user-entry").val() === "rpixar") {
 				var request = $(".excercise").text() + answer;
 				$.ajax({
-				  url: request,
-				  success:function(data){
-				    $(".json-callback").html((JSON.stringify(data, null, 4)));
-				    stageCompleted();
-				  },
-				  error:function(e){
-				  	$(".json-callback").html("Impossible to spy Russell, try again.");
-				  }
+					url: request,
+					success:function(data){
+					$(".json-callback").html((JSON.stringify(data, null, 4)));
+					stageCompleted();
+					},
+					error:function(e){
+						$(".json-callback").html("Impossible to spy Russell, try again.");
+					}
 				});
 			} else {
 				$(".json-callback").html("You're spying the wrong guy !!!!");
