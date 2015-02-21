@@ -19,18 +19,17 @@
     <![endif]-->
   </head>
   <body>
-
 <div class="container">
 
 </div>
 
 <script>
   // Initialize Parse
-  Parse.initialize("bY3Q4qk0UvoosqDZYZO9bKAKO6ujVoH15QSlMtdK", "g2Xz6r0VFXfdUPSjsmlbrLVsoJRBpOed6NLzMyO2");
+ Parse.initialize("bY3Q4qk0UvoosqDZYZO9bKAKO6ujVoH15QSlMtdK", "g2Xz6r0VFXfdUPSjsmlbrLVsoJRBpOed6NLzMyO2");
  
   window.fbAsyncInit = function() {
     Parse.FacebookUtils.init({ // this line replaces FB.init({
-      appId      : '507901256015100', // Facebook App ID
+      appId      : '426357014187708', // Facebook App ID
       status     : false,  // check Facebook Login status
       cookie     : true,  // enable cookies to allow Parse to access the session
       xfbml      : true,  // initialize Facebook social plugins on the page
@@ -38,7 +37,6 @@
     });
  
     // Run code after the Facebook SDK is loaded.
-    console.log(FB.getLoginStatus());
     checkIsConnected();
     // FB.logout(function(response) {
     //     console.log("loooooolll");
@@ -63,6 +61,18 @@
             // and signed request each expire
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
+            FB.api(
+                "/"+uid,
+                function (response) {
+
+                  if (response && !response.error) {
+                    console.log(response);
+                        }
+                    else{
+                        console.log(response);
+                    }                    }
+
+            );
             console.log(accessToken);
             $(".container").html('' +
                         '<p> You are logged in :)</p>' +
