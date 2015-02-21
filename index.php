@@ -59,6 +59,7 @@
             // the user's ID, a valid access token, a signed
             // request, and the time the access token
             // and signed request each expire
+
             var uid = response.authResponse.userID;
             var accessToken = response.authResponse.accessToken;
             FB.api(
@@ -67,15 +68,37 @@
 
                   if (response && !response.error) {
                     console.log(response);
-                        }
-                    else{
-                        console.log(response);
-                    }                    }
+                    var currentUser = Parse.User.current();
+                    console.log(currentUser);
+                    if (!currentUser.get("level")){
+                        currentUser.set("level", 3);
+                        currentUser.save(null, {
+                            success: function(currentUser) {
+                              // Execute any logic that should take place after the object is saved.
+                              alert('New object created with objectId: ' + currentUser.id);
+                            },
+                            error: function(currentUser, error) {
+                              // Execute any logic that should take place if the save fails.
+                              // error is a Parse.Error with an error code and message.
+                              alert('Failed to create new object, with error code: ' + error.message);
+                            }
+                        });
+                    }
+                        // var user = new Parse.User();
+                        // user.set("username", response.first_name + response.last_name);
+                        // user.set("password", "my pass");
+                        // user.set("email", "email@example.com");
 
+                    }
+                    else{
+                    }                    
+                }
             );
             console.log(accessToken);
+            var currentUser = Parse.User.current();
             $(".container").html('' +
-                        '<p> You are logged in :)</p>' +
+                        '<p> You are logged in :) and your level is '+ currentUser.get("level") + ' </p>' +
+                        '<button id="level">Increment</button>' +
                         '<button id="logout">Log out</button>');
         } else if (response.status === 'not_authorized') {
             $(".container").html('<div class="row"><div class="main">'+
@@ -92,24 +115,46 @@
         }
         $("#facebook").click( function() {
             Parse.FacebookUtils.logIn(null, {
-              success: function(user) {
-                if (!user.existed()) {
-                  location.reload(true);
-                } else {
-                location.reload(true);
+                success: function(user) {
+                    if (!user.existed()) {
+                      location.reload(true);
+                    } else {
+                        location.reload(true);
+                    }
+                },
+                error: function(user, error) {
                 }
-        },
-        error: function(user, error) {
-        }
             })
         });
         $("#logout").click( function() {
             console.log('ok or not');
             FB.logout(function(response) {
                 console.log(response);
+                location.reload(true);
             });
-             location.reload(true);
         });
+        $("#level").on("click",function() {
+                console.log('plop');
+                    var currentUser = Parse.User.current();
+                    var num = currentUser.get("level");
+                    num++;
+                    currentUser.set("level", num);
+                    console.log(num++);
+                    currentUser.save(null, {
+                        success: function(currentUser) {
+                          // Execute any logic that should take place after the object is saved.
+                          //alert('New object created with objectId: ' + currentUser.id);
+                          location.reload(true);
+                        },
+                        error: function(currentUser, error) {
+                          // Execute any logic that should take place if the save fails.
+                          // error is a Parse.Error with an error code and message.
+                          alert('Failed to create new object, with error code: ' + error.message);
+    
+                    }
+                });
+                
+            });
     });
 }
 
