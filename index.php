@@ -94,8 +94,9 @@
                     }                    
                 }
             );
-            console.log(accessToken);
             var currentUser = Parse.User.current();
+            currentUser.fetch();
+            console.log(currentUser, "currentuser");
             $(".container").html('' +
                         '<p> You are logged in :) and your level is '+ currentUser.get("level") + ' </p>' +
                         '<button id="level">Increment</button>' +
