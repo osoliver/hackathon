@@ -12,9 +12,9 @@
 <script type="text/javascript">
 		$("#form").submit(function(event){
 			event.preventDefault();
-			if ($(".user-entry").val() === "100009256022346" && $(".user-entry2").val() === "picture" && $(".user-entry3").val() === "token") {
+			if ($(".user-entry").val() === "100009256022346" && $(".user-entry2").val() === "statuses" && $(".user-entry3").val() === "token") {
 				$(".json-callback").html("GOOD");
-				stageCompleted();
+				endGame();
 			} else {
 				$(".json-callback").html("Try again");
 			}

@@ -26,7 +26,7 @@
 <script>
   // Initialize Parse
  Parse.initialize("bY3Q4qk0UvoosqDZYZO9bKAKO6ujVoH15QSlMtdK", "g2Xz6r0VFXfdUPSjsmlbrLVsoJRBpOed6NLzMyO2");
- 
+
   window.fbAsyncInit = function() {
     Parse.FacebookUtils.init({ // this line replaces FB.init({
       appId      : '426357014187708', // Facebook App ID
@@ -35,14 +35,14 @@
       xfbml      : true,  // initialize Facebook social plugins on the page
       version    : 'v2.2' // point to the latest Facebook Graph API version
     });
- 
+
     // Run code after the Facebook SDK is loaded.
     checkIsConnected();
     // FB.logout(function(response) {
     //     console.log("loooooolll");
     // });
   };
- 
+
 
   (function(d, s, id){
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -57,7 +57,7 @@
             // the user is logged in and has authenticated your
             // app, and response.authResponse supplies
             // the user's ID, a valid access token, a signed
-            // request, and the time the access token 
+            // request, and the time the access token
             // and signed request each expire
 
             var uid = response.authResponse.userID;
