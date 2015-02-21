@@ -1,17 +1,17 @@
 <form id="form" action="">
-	<div class="excercise"><span>https://graph.facebook.com/</span><input type="text" name="user-entry" class="user-entry" maxlength="15"></input></div>
+	<div class="excercise"><span>https://graph.facebook.com/</span><input type="text" name="user-entry" class="user-entry" maxlength="15"></div>
 </form>
 <script type="text/javascript">
 		$("#form").submit(function(event){
 			event.preventDefault();
 			var answer = $(".user-entry").val();
-			if ($(".user-entry").val() === "russell.pixar.3") {
+			if ($(".user-entry").val() === "me") {
 				var request = $(".excercise").text() + answer;
 				$.ajax({
 				  url: request,
 				  success:function(data){
-				  	console.log(JSON.stringify(data, null, 4));
 				    $(".json-callback").html((JSON.stringify(data, null, 4)));
+				    stageCompleted();
 				  },
 				  error:function(e){
 				  	$(".json-callback").html("Impossible to spy Russell, try again.");

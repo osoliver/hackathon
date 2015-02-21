@@ -24,7 +24,7 @@
 	text-align: center;
 }
 
-.user-entry {
+.user-entry, .user-entry2 {
 	min-width: 100px;
 	background-color: #C1FFBA;
 	display: inline-block;

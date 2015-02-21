@@ -13,7 +13,13 @@
 	</body>
 
 	<script type="text/javascript">
-		$(".request").load("1.html");
+		var userLvl = 1;
+		$(".request").load(userLvl + ".html");
+		function stageCompleted() {
+			console.log("victory");
+			userLvl++;
+			$(".request").load(userLvl + ".html");
+		};
 	</script>
 
 
