@@ -3,7 +3,7 @@
 	height: 70%;
 	background-color: #a9b2bc;
 	margin: auto;
-	border-radius: 25px 25px 0 0;
+	border-radius: 25px;
 	padding: 50px;
 }
 
@@ -11,14 +11,16 @@
 	float: left;
 	width: 50%;
 	height: 70%;
+	color: white;
 }
 
 .left {
-	background-color: #eee;
+	background-color: #646d78;
+	font-size: 1.5em;
 }
 
 .right {
-	background-color: #ddd;
+	background-color: #434a54;
 }
 
 .intro, .request {
@@ -39,10 +41,27 @@
 	margin: 0;
 	padding: 0;
 	vertical-align: middle;
+	line-height: 1.1em;
 }
 
 form {
 	margin: 0;
+}
+
+input[type="submit"] {
+	height: 50%;
+	border: 3px solid #434a54;
+	background-color: #00a49b;
+	color: #434a54;
+	font-family: inherit;
+	font-weight: 600;
+	font-size: 0.7em;
+	margin: 0;
+	outline: 0;
+	cursor: pointer;
+	vertical-align: top;
+	padding: 10px 27px;
+	letter-spacing: 0.1em;
 }
 
 .request {
@@ -53,9 +72,19 @@ form {
 }
 
 .user-entry, .user-entry2, .user-entry3 {
-	min-width: 100px;
-	background-color: #C1FFBA;
+	width: 150px;
+	background-color: #434a54;
 	display: inline-block;
+	height: 50%;
+	text-decoration: none;
+	border: 3px solid #00dace;
+	outline: 0;
+	color: #fff;
+	font-weight: 200;
+	font-size: 1.0em;
+	font-family: inherit;
+	padding: 10px;
+	margin: 0 15px;
 }
 
 .background {
@@ -69,11 +98,11 @@ form {
 }
 
 .logo {
-background: url("img/logo.png") left top;
-background-repeat: no-repeat;
-width: 230px;
-height: 140px;
-background-size: cover;
+	background: url("img/logo.png") 20px 20px;
+	background-repeat: no-repeat;
+	width: 230px;
+	height: 140px;
+	background-size: 85%;
 }
 
 .profil {
@@ -103,7 +132,15 @@ background-size: cover;
 	display: inline-block;
 }
 
+.excercise {
+	display: inline-block;
+}
+
 body {
 	background-color: black;
 	font-family: Dosis;
+}
+
+pre {
+	font-family: inherit;
 }
