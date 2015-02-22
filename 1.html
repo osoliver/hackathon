@@ -6,22 +6,27 @@
 	</div>
 </form>
 <script type="text/javascript">
+		$(".intro").load("intro/1.html");
+		$(".right").load("instruction/1.html");
 		$("#form").submit(function(event){
 			event.preventDefault();
 			var answer = $(".user-entry").val();
+			$(".txt_response").load("good_answer/1.html");
 			if ($(".user-entry").val() === "rpixar") {
 				var request = $(".excercise").text() + answer;
-				$.ajax({
-					url: request,
-					success:function(data){
-					$(".json-callback").html((JSON.stringify(data, null, 4)));
-					stageCompleted();
-					},
-					error:function(e){
-						$(".json-callback").html("Impossible to spy Russell, try again.");
-					}
-				});
+				$(".txt_response").load("good_answer/1.html");
+				// $.ajax({
+				// 	url: request,
+				// 	success:function(data){
+				// 	$(".json-callback").html((JSON.stringify(data, null, 4)));
+				// 	stageCompleted();
+				// 	},
+				// 	error:function(e){
+				// 		$(".json-callback").html("Impossible to spy Russell, try again.");
+				// 	}
+				// });
 			} else {
+				$(".txt_response").html("<p>You did it wrong</p>");
 				$(".json-callback").html("You're spying the wrong guy !!!!");
 			}
 		});

@@ -12,10 +12,11 @@
 			</div>
 			<div id="wrapper">
 				<div id="app">
-					<div class="intro"><p>Liaison detectee entre un certain machin bidule : <br/> Je veux savoir ce qu'ils preparent ! </p></div>
+					<div class="intro"><p></p></div>
 					<div class="request"><div class="current-request"></div></div>
 					<div class="left">Hey you gonna see magic behind this line after entering your response:<pre class="json-callback"></pre></div>
 					<div class="right">Bad guy : russell.pixar.3</div>
+					<div class="txt_response"></div>
 				</div>
 			</div>
 		</div>
@@ -26,7 +27,7 @@
 		$(".current-request").load(userLvl + ".html");
 		function stageCompleted() {
 			userLvl++;
-			$(".request").load(userLvl + ".html");
+			$(".current-request").load(userLvl + ".html");
 		};
 		function endGame() {
 			$("#wrapper").html("fini");
