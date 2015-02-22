@@ -4,25 +4,19 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
+	<div class="background">
+		<div clas>logo</div>
+		<div>name</div>
 		<div id="wrapper">
 			<div class="title">titre</div>
 			<div class="request"></div>
 			<div class="left">Hey you gonna see magic behind this line after entering your response:<pre class="json-callback"></pre></div>
-			<div class="right">Bad guy : rpixar</div>
+			<div class="right">Bad guy : russell.pixar.3</div>
+		</div>
 		</div>
 	</body>
 
 	<script type="text/javascript">
-		var userLvl = 1;
-		$(".request").load(userLvl + ".html");
-		function stageCompleted() {
-			userLvl++;
-			$(".request").load(userLvl + ".html");
-		};
-		function endGame() {
-			$("#wrapper").html("fini");
-		};
+		$(".request").load("1.html");
 	</script>
-
-
 </html>
