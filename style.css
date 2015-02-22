@@ -1,13 +1,16 @@
 #wrapper {
-	width: 50%;
-	height: 50%;
-	background-color: #ccc;
+	width: 75%;
+	height: 70%;
+	background-color: #a9b2bc;
+	margin: auto;
+	border-radius: 25px 25px 0 0;
+	padding: 50px;
 }
 
 .left, .right {
 	float: left;
 	width: 50%;
-	height: 80%;
+	height: 70%;
 }
 
 .left {
@@ -18,10 +21,35 @@
 	background-color: #ddd;
 }
 
-.title, .request {
-	height: 10%;
+.intro, .request {
 	width: 100%;
 	text-align: center;
+	height: 15%;
+}
+
+.intro {
+	background-color: #fff;
+	font-weight: 600;
+	font-size: 1.6em;
+	color: #434a54;
+}
+
+.intro p, .current-request {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+
+form {
+	margin: 0;
+}
+
+.request {
+	background-color: #00a49b;
+	color: #fff;
+	font-weight: 200;
+	font-size: 1.6em;
 }
 
 .user-entry, .user-entry2, .user-entry3 {
@@ -35,6 +63,47 @@
 	    background-repeat: repeat-x;
 }
 
+#header {
+	width: 100%;
+	position: relative;
+}
+
+.logo {
+background: url("img/logo.png") left top;
+background-repeat: no-repeat;
+width: 230px;
+height: 140px;
+background-size: cover;
+}
+
+.profil {
+	color: #fff;
+	position: absolute;
+	right: 30;
+	top: 20;
+	background: url("img/minion01.svg") right top;
+	height: 48px;
+	padding-right: 50px;
+	background-repeat: no-repeat;
+	font-weight: 200;
+
+}
+
+.profil span {
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 1.5em;
+	font-weight: 200;
+}
+
+.profil::before, .intro::before, .request::before {
+	vertical-align: middle;
+	content: '';
+	height: 100%;
+	display: inline-block;
+}
+
 body {
 	background-color: black;
+	font-family: Dosis;
 }

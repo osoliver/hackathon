@@ -2,21 +2,36 @@
 	<head>
 		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href='http://fonts.googleapis.com/css?family=Dosis:200,600' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-	<div class="background">
-		<div clas>logo</div>
-		<div>name</div>
-		<div id="wrapper">
-			<div class="title">titre</div>
-			<div class="request"></div>
-			<div class="left">Hey you gonna see magic behind this line after entering your response:<pre class="json-callback"></pre></div>
-			<div class="right">Bad guy : russell.pixar.3</div>
-		</div>
+		<div class="background">
+			<div id="header">
+				<div class="logo">logo</div>
+				<div class="profil"><span>name</span></div>
+			</div>
+			<div id="wrapper">
+				<div id="app">
+					<div class="intro"><p>Liaison detectee entre un certain machin bidule : <br/> Je veux savoir ce qu'ils preparent ! </p></div>
+					<div class="request"><div class="current-request"></div></div>
+					<div class="left">Hey you gonna see magic behind this line after entering your response:<pre class="json-callback"></pre></div>
+					<div class="right">Bad guy : russell.pixar.3</div>
+				</div>
+			</div>
 		</div>
 	</body>
 
 	<script type="text/javascript">
-		$(".request").load("1.html");
+		var userLvl = 1;
+		$(".current-request").load(userLvl + ".html");
+		function stageCompleted() {
+			userLvl++;
+			$(".request").load(userLvl + ".html");
+		};
+		function endGame() {
+			$("#wrapper").html("fini");
+		};
+
+
 	</script>
 </html>
